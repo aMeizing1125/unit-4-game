@@ -13,6 +13,7 @@
     background-color: whitesmoke;
     height: 50px;
     font-weight:bolder;
+    font-family: 'Poller One', cursive;
     
 }
 
@@ -45,7 +46,9 @@
 
 .character h3{
     position: absolute;    
-    text-align: center;
+    color: white;
+    font-size: 24px;
+    font-family: 'Poller One', cursive;
 
 }
 
@@ -79,6 +82,10 @@ body {
     grid-template-columns: 80%;
     justify-content: space-evenly;
 }
+.players.characterCard.characterName {
+    font-size: 20px;
+    
+}
 
 .grid {
     display: grid;
@@ -99,30 +106,40 @@ body {
     grid-column-start: stats;
     grid-row-start: top;
     grid-row: span bottom;
-    border: 2px whitesmoke solid;
+    border: 2px whitesmoke dotted;
     color: black;
     font-weight: bold;
     background-color:rgba(96,119,155,0.7);
+    
 }
 
 .stats {
     background: rgba(96,119,155,.7);
     text-align: center;
+    line-height: 26px;
+    
 }
 table {
-    width: 100%;
+    margin: 0 auto;
+    padding: 20px;
     background: rgba(96,119,155,0.7);
-    border-bottom: 1px whitesmoke solid;
+    width:70%;
+    
 
 }
+tbody {
+    font-size: 24px;
+}
+
 .stats h2{
     font-size: 48px;
     padding:20px;
     line-height: 7px;
 }
-.stats h3{
-    font-size: 24px;
+.stats.statistics h3{
+    font-size: 36px;
     line-height: 1px;
     padding:20px;
+    
 }
 /* Reponsivesless @media */
