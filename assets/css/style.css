@@ -1,0 +1,119 @@
+/* Global */
+* {
+ font-family: 'Poller One', cursive;
+ font-weight: bold;
+ box-sizing: border-box;
+
+}
+/* Header */
+.banner{
+    color: rgb(100, 128, 0);
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    font-size: 40px;
+    background-color: whitesmoke;
+    height: 50px;
+    font-weight:bolder;
+    
+}
+
+.banner h1 {
+    text-align: center;
+}
+
+/* Character cards */
+.players {
+    display: flex;
+    justify-content: space-evenly;
+   
+    color: black;
+}
+.characterCard {
+    background-color: white;
+    height: 90%;
+    border: 8px black solid;
+    width: 220px;
+    position: relative;
+    overflow: hidden;
+
+}
+.characterCard img {
+    height: 100%;
+    overflow: hidden;
+   
+}
+
+.characterCard #img3 {
+    padding-left: 10px;
+
+}
+
+.character h3{
+    position: absolute;     
+}
+
+/* BODY */
+
+.the_body {
+    grid-template-columns: [game] auto [stats] 20%;
+    background-image: url("../images/background1.jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    position: static;
+    background-size: cover;
+    display:grid;
+    color: whitesmoke;
+    height: 100vh;
+}
+
+
+.the_body.grid.characterCard img {
+    width: 220px;
+    
+}
+
+body {
+    display:grid;
+    grid-template-rows: [banner] 200px [body] auto;
+
+}
+
+.players{
+    grid-template-columns: 80%;
+    justify-content: space-evenly;
+}
+
+.grid {
+    display: grid;
+    grid-template-rows: [top] 33% [middle] 33% [bottom];
+}
+.board {
+    
+}
+
+/* Stats sidetoolbar  */
+
+.statistics {
+    grid-column-start: stats;
+    grid-row-start: top;
+    grid-row: span bottom;
+    border: 2px whitesmoke solid;
+    color: black;
+    font-weight: bold;
+    background-color:rgba(96,119,155,.7);
+}
+
+.stats {
+    background-color: rgba(96,119,155,.7);
+}
+
+.stats h2{
+    font-size: 48px;
+    padding:20px;
+    line-height: 7px;
+}
+.stats h3{
+    font-size: 24px;
+    line-height: 1px;
+    padding:20px;
+}
+/* Reponsivesless @media */
