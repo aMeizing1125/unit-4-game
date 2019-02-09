@@ -24,14 +24,14 @@
 .players {
     display: flex;
     justify-content: space-evenly;
-   
+   height: 80%;
     color: black;
 }
 .characterCard {
-    background-color: white;
-    height: 90%;
+    background-color:rgba(245,245,245,.5);
+  
     border: 8px black solid;
-    width: 220px;
+    max-width: 250px;
     position: relative;
     overflow: hidden;
 
@@ -42,13 +42,11 @@
    
 }
 
-.characterCard #img3 {
-    padding-left: 10px;
-
-}
 
 .character h3{
-    position: absolute;     
+    position: absolute;    
+    text-align: center;
+
 }
 
 /* BODY */
@@ -67,7 +65,7 @@
 
 
 .the_body.grid.characterCard img {
-    width: 220px;
+    width: 100%;
     
 }
 
@@ -89,6 +87,11 @@ body {
 .board {
     
 }
+.directions{
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+}
 
 /* Stats sidetoolbar  */
 
@@ -99,13 +102,19 @@ body {
     border: 2px whitesmoke solid;
     color: black;
     font-weight: bold;
-    background-color:rgba(96,119,155,.7);
+    background-color:rgba(96,119,155,0.7);
 }
 
 .stats {
-    background-color: rgba(96,119,155,.7);
+    background: rgba(96,119,155,.7);
+    text-align: center;
 }
+table {
+    width: 100%;
+    background: rgba(96,119,155,0.7);
+    border-bottom: 1px whitesmoke solid;
 
+}
 .stats h2{
     font-size: 48px;
     padding:20px;

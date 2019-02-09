@@ -2,7 +2,7 @@ var hero = characters[i];
 var enemy = characters[i];
 
 var players = {
-    characterName1: {
+    rebel: {
         attackPower: 50,
         defend: 50,
         forcePower: 50,
@@ -10,7 +10,7 @@ var players = {
         heroBonus: 5,
         healthPoints: 150
     },
-    characterName2: {
+    alien: {
         attackPower: 25,
         defend: 75,
         forcePower: 100,
@@ -18,7 +18,7 @@ var players = {
         heroBonus: 5,
         healthPoints: 200
     },
-    characterName3: {
+    bountyHunter: {
         attackPower: 30,
         defend: 50,
         forcePower: 30,
@@ -26,7 +26,7 @@ var players = {
         heroBonus: 5,
         healthpoints: 250,
     },
-    characterName4: {
+    stromtrooper: {
         attackpower: 80,
         defend: 20,
         forcePower: 80,
