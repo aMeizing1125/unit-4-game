@@ -160,14 +160,14 @@ $('.force_attack_btn').on('click', function(){
 
 
 //I am going to leave off the decrease defend does to attack for now. If i get time I will include it.
-$('.phys_defend_btn').on('click', function(){
-    if((heroSelected == true) && (enemySelected == true)){
-        console.log(activeHero.getDefend());
-    //this is needs to be switched to subtracting the 
-        activeEnemy.setHealthPoints(activeEnemy.getHealthPoints()-activeHero.getAttack());
-        console.log(activeEnemy.getHealthPoints());
-    }
-});
+// $('.phys_defend_btn').on('click', function(){
+//     if((heroSelected == true) && (enemySelected == true)){
+//         console.log(activeHero.getDefend());
+//     //this is needs to be switched to subtracting the 
+//         activeEnemy.setHealthPoints(activeEnemy.getHealthPoints()-activeHero.getAttack());
+//         console.log(activeEnemy.getHealthPoints());
+//     }
+// });
 // $('.force_defend_btn').on('click', function(){
 //     if((heroSelected == true) && (enemySelected == true)){
 //         activeEnemy.setHealthPoints(activeEnemy.getHealthPoints()-activeHero.getAttack());
