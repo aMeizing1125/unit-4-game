@@ -48,7 +48,7 @@
     position: absolute;    
     color: white;
     font-size: 24px;
-    font-family: 'Poller One', cursive;
+    font-family: Arial;
 
 }
 
@@ -123,7 +123,7 @@ table {
     margin: 0 auto;
     padding: 20px;
     background: rgba(96,119,155,0.7);
-    width:70%;
+    width:80%;
     
 
 }

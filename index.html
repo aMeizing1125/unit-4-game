@@ -25,38 +25,54 @@
         <div class="the_body">
             <div class="grid">
                 <div class="players">
-                    <div class="characterCard character" id="ch1" data-player="undefined">
+                    <div class="characterCard character" id="luke" data-player="null">
                         <h3 class="characterName">Luke</h3>
                         <img src="assets/images/luke_icon.png" alt="Luke" class="characterIcon">
                     </div>
-                    <div class="characterCard character" id="ch2" data-player="undefined">
+                    <div class="characterCard character" id="yoda" data-player="null">
                         <h3 class="characterName">Yoda</h3>
                         <img src="assets/images/yoda_icon.png" alt="Yoda" class="characterIcon">
                     </div>
-                    <div class="characterCard character" id="ch3" data-player="undefined">
+                    <div class="characterCard character" id="bountyHunter" data-player="null">
                         <h3 class="characterName">Bounty Hunter</h3>
                         <img src="assets/images/bounty_hunter_icon.png" alt="Bounty Hunter" class="characterIcon"
                             id="img3">
                     </div>
-                    <div class="characterCard character" id="ch4" data-player="undefined">
+                    <div class="characterCard character" id="stormtrooper" data-player="null">
                         <h3 class="characterName">Stormtrooper</h3>
                         <img src="assets/images/stroomtrooper_icon.png" alt="Stormtropper" class="characterIcon">
                     </div>
                 </div>
                 <div class="board">
-                    <div class="hero">
-
-                    </div>
+                    <div class="col1"></div>
+                    <div class="col2"></div>
+                    <div class="col3"></div>
+                </div>
+                <div class="heroPosition">
+                        <div class="directions">
+                                <h3>Select a Hero to Start</h3>
+                            </div>
                     <div class="action">
-
+                        <button class="phys_attack_btn">
+                            <img src="assets/images/attack_icon.png" alt="Physical Attack">
+                            <h4>Physical Attack</h4>
+                        </button>
+                        <button class="phys_defend_btn">
+                            <img src="assets/images/force_defend.png" alt="Physical Defend">
+                            <h4>Physical Defend</h4>
+                        </button>
+                        <button class="force_attack">
+                            <img src="assets/images/force_attack.png" alt="Force Attack">
+                            <h4>Force Attack</h4>
+                        </button>
+                        <button class="force_defend">
+                            <img src="assets/images/physical_defend.png" alt="Force Defend">
+                            <h4>Force Defend</h4>
+                        </button>
                     </div>
-                    <div class="enemy">
 
-                    </div>
                 </div>
-                <div class="directions">
-                    <h3>Select a Hero to Start</h3>
-                </div>
+                
             </div>
             <!-- <div class="row2_body">
                 <p>
@@ -149,31 +165,9 @@ function selectHero(i){
 
 }
 
-//function selectEnemy
-function selectEnemy(){
-    enemy = character[i];
-    //jQuery change background
- //hide unselected enemies
-}
 
 
 
-function battground(){
-    
-    //Decrement hero.healthPoints by enemy.attackPower
-    //Decrement hero.healthPoints by enemy.forcePower
-
-    //Decrement  enemy.attackPower by hero.healPoints 
-    //Decrement hero.healthPoints by enemy.focePower
-
-    //Increment hero.attackPower by hero.heroBonus => (hero.attackPower += hero.heroBonus)
-    
-}
-
-function starWarsGame (){
-
-
-}
 
 -->
 
