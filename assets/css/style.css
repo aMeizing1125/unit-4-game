@@ -40,9 +40,12 @@
 .characterCard img {
     height: 100%;
     overflow: hidden;
+ 
    
 }
-
+.characterIcon {
+    max-height: 220px;
+}
 
 .character h3{
     position: absolute;    
@@ -98,20 +101,54 @@ body {
     text-align: center;
     font-size: 24px;
     font-weight: bold;
+    justify-content: space-between;
+}
+/* Buttons */
+/* Why won't they center? */
+.heroPosition {
+    display:grid;
+    justify-content: space-evenly
+   
+}
+.phys_attack_btn, 
+.phys_defend_btn, 
+.force_attack_btn, 
+.force_defend_btn  {
+    margin: 0 auto;
+    
+}
+.reset_btn_area {
+    justify-content: center;
+    border-radius: 4px;
+
 }
 
+.reset_btn_area:hover {
+  
+}
+/* trying new things. I haven't used active before. I think I like CSS best. 
+like a strange abusive relationship.  */
+.reset_btn_area:active {
+	color: #fff;
+	text-shadow: 0 -1px 0 #444, 0 0 5px #ffd, 0 0 8px #fff;
+	box-shadow: 0 1px 0 #666, 0 2px 0 #444, 0 2px 2px rgba(0,0,0,0.9);
+	transform: translateY(3px);
+	animation: none;
+}
 /* Stats sidetoolbar  */
 
 .statistics {
     grid-column-start: stats;
     grid-row-start: top;
     grid-row: span bottom;
-    border: 2px whitesmoke dotted;
+    border: 2px whitesmoke solid;
     color: black;
     font-weight: bold;
     background-color:rgba(96,119,155,0.7);
     
+    
 }
+
 
 .stats {
     background: rgba(96,119,155,.7);
@@ -119,14 +156,16 @@ body {
     line-height: 26px;
     
 }
-table {
+table  {
     margin: 0 auto;
     padding: 20px;
     background: rgba(96,119,155,0.7);
-    width:80%;
+    width:100%;
+    
     
 
 }
+
 tbody {
     font-size: 24px;
 }

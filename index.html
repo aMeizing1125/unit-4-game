@@ -28,30 +28,43 @@
                     <div class="characterCard character" id="luke" data-player="null">
                         <h3 class="characterName">Luke</h3>
                         <img src="assets/images/luke_icon.png" alt="Luke" class="characterIcon">
+                        <span class="tooltiptextStats" id="lukeStats">test</span>
                     </div>
                     <div class="characterCard character" id="yoda" data-player="null">
                         <h3 class="characterName">Yoda</h3>
                         <img src="assets/images/yoda_icon.png" alt="Yoda" class="characterIcon">
+                        <span class="tooltiptextStats" id="yodaStats"></span>
                     </div>
                     <div class="characterCard character" id="bountyHunter" data-player="null">
                         <h3 class="characterName">Bounty Hunter</h3>
                         <img src="assets/images/bounty_hunter_icon.png" alt="Bounty Hunter" class="characterIcon"
                             id="img3">
+                            <span class="tooltiptextStats" id="bountyStats"></span>
                     </div>
                     <div class="characterCard character" id="stormtrooper" data-player="null">
                         <h3 class="characterName">Stormtrooper</h3>
                         <img src="assets/images/stroomtrooper_icon.png" alt="Stormtropper" class="characterIcon">
+                        <span class="tooltiptextStats" id="stormStatus"></span>
                     </div>
                 </div>
                 <div class="board">
-                    <div class="col1"></div>
-                    <div class="col2"></div>
-                    <div class="col3"></div>
+                   <table>
+                       <tr>
+                       <th> </th> <!---Hero--->
+                       <th>Hero Action</th>
+                       <th>Picked Enemy</th>
+                       <th>Enemy Action</th>
+                    </tr>
+                    <td id="board_hero"></td>
+                    <td id="board_hero_action"></td>
+                    <td id="board_enemy"></td>
+                    <td id="board_enemy_action"></td>
+                   </table>
                 </div>
                 <div class="heroPosition">
-                        <div class="directions">
-                                <h3>Select a Hero to Start</h3>
-                            </div>
+                    <div class="directions">
+                        <h3>Select a Hero to Start</h3>
+                    </div>
                     <div class="action">
                         <button class="phys_attack_btn">
                             <img src="assets/images/attack_icon.png" alt="Physical Attack">
@@ -69,10 +82,13 @@
                             <img src="assets/images/physical_defend.png" alt="Force Defend">
                             <h4>Force Defend</h4>
                         </button>
-                    </div>
 
+                    </div>
+                    <div>
+                        <button class="reset_btn_area" type="button" value="Reload Page" onclick="document.location.reload(true)">Restart Game</button>
+                    </div>
                 </div>
-                
+
             </div>
             <!-- <div class="row2_body">
                 <p>
@@ -84,50 +100,103 @@
             </div> -->
             <!-- </div> -->
             <div class="stats">
-                <h2>Stats</h2>
-                <table class="statistics">
+                <h2>Hero's:</h2>
+                
+                <table class="statistics ">
                     <tr>
                         <th>
-                            <h3>Health Points = </h3>
+                            <h3>Hero Health Points = </h3>
                         </th>
                         <td class="healthPoints">
-                            <h3>100</h3>
+                            <h3 id="HPvalue"></h3>
                         </td>
                     </tr>
                     <tr>
                         <th>
-                            <h3>Physical Attack = </h3>
+                            <h3>Hero Physical Attack = </h3>
                         </th>
                         <td class="physicalAttack">
-                            <h3> 100</h3>
+                            <h3 id="attackValue"></h3>
                         </td>
                     </tr>
                     <tr>
                         <th>
-                            <h3>Physical Defend = </h3>
+                            <h3>Hero Physical Defend = </h3>
                         </th>
                         <td class="physicalDefend">
-                            <h3> 200</h3>
+                            <h3 id="defendValue"> </h3>
                         </td>
                     </tr>
                     <tr>
                         <th>
-                            <h3>Force Attack = </h3>
+                            <h3>Hero Force Attack = </h3>
                         </th>
                         <td class="forceAttack">
-                            <h3>300</h3>
+                            <h3 id="forceAttackValue"></h3>
                         </td>
                     </tr>
                     <tr>
                         <th>
-                            <h3>Force Defend = </h3>
+                            <h3>Hero Force Defend = </h3>
                         </th>
                         <td class="forceDefend">
-                            <h3> 400</h3>
+                            <h3 id="forceDefendValue"></h3>
                         </td>
                     </tr>
+                </table>
+                <div class="bottomStats">
+                    <br>
+                    <h2>Enemy's</h2>
+                    <table class="statistics ">
+                        <tr>
+                            <th>
+                                <h3>Enemy Health Points = </h3>
+                            </th>
+                            <td class="healthPoints">
+                                <h3 id="enemyHPvalue"></h3>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
+                                <h3>Enemy Physical Attack = </h3>
+                            </th>
+                            <td class="physicalAttack">
+                                <h3 id="enemyattackValue"></h3>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
+                                <h3>Enemy Physical Defend = </h3>
+                            </th>
+                            <td class="physicalDefend">
+                                <h3 id="enemydefendValue"> </h3>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
+                                <h3>Enemy Force Attack = </h3>
+                            </th>
+                            <td class="forceAttack">
+                                <h3 id="enemyforceAttackValue"></h3>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
+                                <h3>Enemy Force Defend = </h3>
+                            </th>
+                            <td class="forceDefend">
+                                <h3 id="enemyforceDefendValue"></h3>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+
             </div>
+            <hr>
+
+
         </div>
+    </div>
 
 
 
@@ -137,39 +206,6 @@
     </div>
 
 
-    <!-- HP, AT, Rock paper scissors, 
-physical attack physcial defend || magic attack magic defend  
-4 character option with different stats
-write code for statistics HP, AT, Force Attack, Force Defend, 
-create options like if you gues correctly 2 or 3 times in a row give you bonus health or attack power
-Your characters attack increase and the opponents attack stays consistent
-create the increasing attack for the selected character create var for the number of times you character attacks
-characters are objects
-
-array of characters and the keys are the health, attack, defense. 
-create a variable for the character I select. 
-create click even on characters to start the game and it assign it to the hero
-for loop to check if you won/losse after each attack 
-
-
-/enhance with CSS to applify the project
-
-win is when you defeat everyone
-loss is when you HP is to 0
-// you want this to be outside of the starWarsGame() so you can call it multiple times
-
-//function selectHero
-//selectHero(i) the (i) is the parameter passed to this function
-function selectHero(i){
-    hero = characters[i];
-
-}
-
-
-
-
-
--->
 
     <script src="assets/javascript/game.js"></script>
 </body>
