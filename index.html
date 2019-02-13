@@ -28,23 +28,23 @@
                     <div class="characterCard character" id="luke" data-player="null">
                         <h3 class="characterName">Luke</h3>
                         <img src="assets/images/luke_icon.png" alt="Luke" class="characterIcon">
-                        <span class="tooltiptextStats" id="lukeStats">test</span>
+                        <!-- <span class="tooltiptextStats" id="lukeStats"></span> -->
                     </div>
                     <div class="characterCard character" id="yoda" data-player="null">
                         <h3 class="characterName">Yoda</h3>
                         <img src="assets/images/yoda_icon.png" alt="Yoda" class="characterIcon">
-                        <span class="tooltiptextStats" id="yodaStats"></span>
+                        <!-- <span class="tooltiptextStats" id="yodaStats"></span> -->
                     </div>
                     <div class="characterCard character" id="bountyHunter" data-player="null">
                         <h3 class="characterName">Bounty Hunter</h3>
                         <img src="assets/images/bounty_hunter_icon.png" alt="Bounty Hunter" class="characterIcon"
                             id="img3">
-                            <span class="tooltiptextStats" id="bountyStats"></span>
+                            <!-- <span class="tooltiptextStats" id="bountyStats"></span> -->
                     </div>
                     <div class="characterCard character" id="stormtrooper" data-player="null">
                         <h3 class="characterName">Stormtrooper</h3>
                         <img src="assets/images/stroomtrooper_icon.png" alt="Stormtropper" class="characterIcon">
-                        <span class="tooltiptextStats" id="stormStatus"></span>
+                        <!-- <span class="tooltiptextStats" id="stormStatus"></span> -->
                     </div>
                 </div>
                 <div class="board">
@@ -56,9 +56,10 @@
                        <th>Enemy Action</th>
                     </tr>
                     <td id="board_hero"></td>
-                    <td id="board_hero_action"></td>
+                    <td id="board_hero_action"><img id="hero_lightsaber" src="assets/images/iconfinder_lightsaber-luke-rotj_1626626.png"></td>
+                    <td id="board_enemy_action"><img id="enemy_lightsaber" src="assets/images/iconfinder_lightsaber-darth-vader_1626624.png"></td>
                     <td id="board_enemy"></td>
-                    <td id="board_enemy_action"></td>
+                    
                    </table>
                 </div>
                 <div class="heroPosition">
@@ -105,7 +106,7 @@
                 <table class="statistics ">
                     <tr>
                         <th>
-                            <h3>Hero Health Points = </h3>
+                            <h3 id="hero_health">Hero Health Points:</h3>
                         </th>
                         <td class="healthPoints">
                             <h3 id="HPvalue"></h3>
@@ -113,7 +114,7 @@
                     </tr>
                     <tr>
                         <th>
-                            <h3>Hero Physical Attack = </h3>
+                            <h3 id="hero_attack">Hero Physical Attack:</h3>
                         </th>
                         <td class="physicalAttack">
                             <h3 id="attackValue"></h3>
@@ -121,7 +122,7 @@
                     </tr>
                     <tr>
                         <th>
-                            <h3>Hero Physical Defend = </h3>
+                            <h3 id="hero_defend">Hero Physical Defend:</h3>
                         </th>
                         <td class="physicalDefend">
                             <h3 id="defendValue"> </h3>
@@ -129,7 +130,7 @@
                     </tr>
                     <tr>
                         <th>
-                            <h3>Hero Force Attack = </h3>
+                            <h3 id="hero_force_attack">Hero Force Attack:</h3>
                         </th>
                         <td class="forceAttack">
                             <h3 id="forceAttackValue"></h3>
@@ -137,7 +138,7 @@
                     </tr>
                     <tr>
                         <th>
-                            <h3>Hero Force Defend = </h3>
+                            <h3 id="hero_force_defend">Hero Force Defend:</h3>
                         </th>
                         <td class="forceDefend">
                             <h3 id="forceDefendValue"></h3>
@@ -150,7 +151,7 @@
                     <table class="statistics ">
                         <tr>
                             <th>
-                                <h3>Enemy Health Points = </h3>
+                                <h3 id="enemy_health">Enemy Health Points = </h3>
                             </th>
                             <td class="healthPoints">
                                 <h3 id="enemyHPvalue"></h3>
@@ -158,7 +159,7 @@
                         </tr>
                         <tr>
                             <th>
-                                <h3>Enemy Physical Attack = </h3>
+                                <h3 id="enemy_attack">Enemy Physical Attack = </h3>
                             </th>
                             <td class="physicalAttack">
                                 <h3 id="enemyattackValue"></h3>
@@ -166,7 +167,7 @@
                         </tr>
                         <tr>
                             <th>
-                                <h3>Enemy Physical Defend = </h3>
+                                <h3 id="enemy_defend">Enemy Physical Defend = </h3>
                             </th>
                             <td class="physicalDefend">
                                 <h3 id="enemydefendValue"> </h3>
@@ -174,7 +175,7 @@
                         </tr>
                         <tr>
                             <th>
-                                <h3>Enemy Force Attack = </h3>
+                                <h3 id="enemy_force_attack">Enemy Force Attack = </h3>
                             </th>
                             <td class="forceAttack">
                                 <h3 id="enemyforceAttackValue"></h3>
@@ -182,7 +183,7 @@
                         </tr>
                         <tr>
                             <th>
-                                <h3>Enemy Force Defend = </h3>
+                                <h3 id="enemy_force_defend">Enemy Force Defend = </h3>
                             </th>
                             <td class="forceDefend">
                                 <h3 id="enemyforceDefendValue"></h3>

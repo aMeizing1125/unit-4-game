@@ -12,107 +12,104 @@ class combatant {
     constructor(name) {
         this.name = name;
         this.action = null;
-        if (this.name == "luke"){
+        if (this.name == "luke") {
             //tried === here NOPE! 
-            this.attackPower=25;
-            this.counter=20;
-            this.defend=50;//defense perfect against forcePower/forceAttack
-            this.forcePower=80;
-            this.forceDefend=50; //defense perfect against forcePower/forceAttack
-            this.heroBonus=5;
-            this.healthPoints= 250;
+            this.attackPower = 25;
+            this.counter = 20;
+            this.defend = 50;//defense perfect against forcePower/forceAttack
+            this.forcePower = 40;
+            this.forceDefend = 50; //defense perfect against forcePower/forceAttack
+            this.heroBonus = 5;
+            this.healthPoints = 250;
             //trying to prevent hero/enemy bug ****
             // this.heroTag = false; **commented out to try a var 
         }
-        if (this.name == "yoda"){
-            this.attackPower=30;
-            this.counter=20;
-            this.defend=50;
-            this.forcePower=100;
-            this.forceDefend=100;//defense perfect against forcePower/forceAttack
-            this.heroBonus=5;
-            this.healthPoints= 300;
+        if (this.name == "yoda") {
+            this.attackPower = 30;
+            this.counter = 20;
+            this.defend = 50;
+            this.forcePower = 100;
+            this.forceDefend = 100;//defense perfect against forcePower/forceAttack
+            this.heroBonus = 5;
+            this.healthPoints = 300;
         }
-        if (this.name == "bountyHunter"){
-            this.attackPower=20;
-            this.counter=20;
-            this.defend=50;//defense perfect against forcePower/forceAttack
-            this.forcePower=20;
-            this.forceDefend=50;//defense perfect against forcePower/forceAttack
-            this.heroBonus=5;
-            this.healthPoints= 150;
+        if (this.name == "bountyHunter") {
+            this.attackPower = 20;
+            this.counter = 20;
+            this.defend = 50;//defense perfect against forcePower/forceAttack
+            this.forcePower = 20;
+            this.forceDefend = 50;//defense perfect against forcePower/forceAttack
+            this.heroBonus = 5;
+            this.healthPoints = 150;
         }
-        if (this.name == "stormtrooper"){
-            this.attackPower=15;
-            this.counter=15;
-            this.defend=50;//defense perfect against forcePower/forceAttack
-            this.forcePower=15;
-            this.forceDefend=50;//defense perfect against forcePower/forceAttack
-            this.heroBonus=5;
-            this.healthPoints=150;
+        if (this.name == "stormtrooper") {
+            this.attackPower = 15;
+            this.counter = 15;
+            this.defend = 50;//defense perfect against forcePower/forceAttack
+            this.forcePower = 15;
+            this.forceDefend = 30;//defense perfect against forcePower/forceAttack
+            this.heroBonus = 5;
+            this.healthPoints = 150;
         }
     }
-    
-  
-    getName(){
+
+
+    getName() {
         return this.name;
     }
-    getAttackPower(){
-        return this.attackPower;
+    getAttackPower() {
+        return this.attackPower*numberOfPhysAttacks;
     }
-    getDefend(){
+    getDefend() {
         return this.defend;
     }
-    getForcePower(){
+    getForcePower() {
         return this.forcePower;
     }
-    getForceDefend(){
+    getForceDefend() {
         return this.forceDefend;
     }
-    getHealthPoints(){
+    getHealthPoints() {
         return this.healthPoints;
     }
-    setHealthPoints(hp){
+    setHealthPoints(hp) {
         this.healthPoints = hp;
         return;
     }
-
-    setAction(currentAction){
+    setAction(currentAction) {
         this.action = currentAction;
     }
-    getAction(){
+    getAction() {
         return this.action;
     }
 
-    die(){
+    die() {
         //generates a REGEX expression to find divs by ID (since they all have the same name) and automatically hide any matches. 
         //pattern matching language jquery can use regex but must be one line
         //you have to .concat the regex expression that actually searches for the div based on the name attribute of this class
         //this actually refers to game.js the class combatant above.  
         $('div[id^="'.concat(this.getName().concat('"]'))).hide();
         killCount++;
-        if (killCount ==3){
+        if (killCount == 3) {
             alert("You win");
             alert("Restart when you are ready");
         }
     }
 
-    gameOver(){
+    gameOver() {
         $('.players').hide();
-        alert ("GAME OVER");
-        alert ("Restart the game when you are done morning your defeat! Muah ha ha ha!");
+        alert("GAME OVER");
+        alert("Restart the game when you are done morning your defeat! Muah ha ha ha!");
         $('.reset_btn_area').css('border', "solid 20px red");
-
-    
     }
 
-    enemyAction(hero){
+    enemyAction(hero) {
         var random = (Math.floor(Math.random() * 4));
-        switch(random) {
+        switch (random) {
             case 0: //enemy physical attack
                 console.log("Enemy is attacking physically");
-                if (!(hero.getAction() == "Physical Defense")){
-                    hero.setHealthPoints(hero.getHealthPoints()-this.getAttackPower());
+                if (!(hero.getAction() == "Physical Defense")) {
+                    hero.setHealthPoints(hero.getHealthPoints() - this.getAttackPower());
                 }
                 console.log("Player HP is now ".concat(hero.getHealthPoints()));
                 $("#physicalAttack").html("<h3> " + (hero.getAttackPower()) + "</h3>");
@@ -120,8 +117,8 @@ class combatant {
 
             case 1: //enemy force attack
                 console.log("Enemy is attacking forcefully");
-                if (!(hero.getAction() == "Force Defense")){
-                    hero.setHealthPoints(hero.getHealthPoints()-this.getForcePower());
+                if (!(hero.getAction() == "Force Defense")) {
+                    hero.setHealthPoints(hero.getHealthPoints() - this.getForcePower());
                 }
                 console.log("Player HP is now ".concat(hero.getHealthPoints()));
                 break;
@@ -135,19 +132,39 @@ class combatant {
                 console.log("Enemy is blocking forcefully");
                 this.setAction("Force Defense");
                 break;
-          }
+        }
 
     }
-  
-}
- var killCount = 0;
- var heroSelected = false;
- var enemySelected = false;
- var activeEnemy = null;
- var activeHero = null;
- //created this tag to prevent duplication of the hero being activeHero being enemySelected
- var attacker = false;
 
+}
+var killCount = 0;
+var heroSelected = false;
+var enemySelected = false;
+var activeEnemy = null;
+var activeHero = null;
+//created this tag to prevent duplication of the hero being activeHero being enemySelected
+var attacker = false;
+//multiplying PhysAttack
+//has to be on or it will be 0 damage first time.. duh!
+var numberOfPhysAttacks = 1;
+
+//Jonathan's testing grounds-----------------------------------------------------------------
+function hero_statistics(){
+    $("#hero_health").text("Hero Health Points: " + activeHero.getHealthPoints());
+    $("#hero_attack").text("Hero Physical Attack: " + activeHero.getAttackPower());
+    $("#hero_defend").text("Hero Physical Defend: " + activeHero.getDefend());
+    $("#hero_force_attack").text("Hero Force Attack: " + activeHero.getForcePower());
+    $("#hero_force_defend").text("Hero Force Defend: " + activeHero.getForceDefend());
+}
+function enemy_statistics(){
+    $("#enemy_health").text("Enemy Health Points: " + activeEnemy.getHealthPoints());
+    $("#enemy_attack").text("Enemy Physical Attack: " + activeEnemy.getAttackPower());
+    $("#enemy_defend").text("Enemy Physical Defend: " + activeEnemy.getDefend());
+    $("#enemy_force_attack").text("Enemy Force Attack: " + activeEnemy.getForcePower());
+    $("#enemy_force_defend").text("Enemy Force Defend: " +activeEnemy.getForceDefend());
+}
+
+// --------------------------------------------------------------------------------------------
 
 // // BUG FOUND You want logic that works like this:
 // When the user clicks the square
@@ -159,22 +176,23 @@ class combatant {
 // This is the oringal code to the select a hero/enemy stage of the game. resolving bug. 
 
 
-$('.characterCard').on('click', function() {
+$('.characterCard').on('click', function () {
     //return exits the function you're in **note**
     if ((attacker == true) && (enemySelected == false)) {
         //trying to prevent hero/enemy bug "&& heroTag==false" removed to test another method
-        enemySelected = true && attacker ==true;
+        enemySelected = true && attacker == true;
         console.log(attacker);
         console.log(this);
+
         alert("something something dark side");
         $(this).css('border', "solid 5px red");
         activeEnemy = new combatant($(this).attr('id'));
         console.log(activeEnemy);
         //moves enemy to board
         $(this).appendTo('#board_enemy');
-        
+        enemy_statistics();
         // you often have to code things backwards
-    }else if(heroSelected == false){
+    } else if (heroSelected == false) {
         heroSelected = true;
         attacker = true;
         console.log(this);
@@ -185,6 +203,7 @@ $('.characterCard').on('click', function() {
         console.log(activeHero.getAttackPower());
         //move hero when selected
         $(this).appendTo('#board_hero');
+        hero_statistics();
     }
 });
 
@@ -216,71 +235,81 @@ $('.characterCard').on('click', function() {
 //     }
 // });
 
-$('.phys_attack_btn').on('click', function(){
-    if ((heroSelected == true) && (enemySelected == true)){
-    console.log("player is physically attacking for ".concat(activeHero.getAttackPower()));
-    //send action to board area so player can be notified of the actinos instead of in console.log()
-    //activeEnemy runs function setHealthPoints
-        
+$('.phys_attack_btn').on('click', function () {
+    if ((heroSelected == true) && (enemySelected == true)) {
+        console.log("player is physically attacking for ".concat(activeHero.getAttackPower()));
+        //send action to board area so player can be notified of the actinos instead of in console.log()
+        //activeEnemy runs function setHealthPoints
+        numberOfPhysAttacks++;
         activeHero.setAction("Physical Attack");
         activeEnemy.enemyAction(activeHero);
-        if (!(activeEnemy.getAction()=="Physical Defense")){
-            activeEnemy.setHealthPoints(activeEnemy.getHealthPoints()-activeHero.getAttackPower());
+        if (!(activeEnemy.getAction() == "Physical Defense")) {
+            activeEnemy.setHealthPoints(activeEnemy.getHealthPoints() - activeHero.getAttackPower());
         }
         console.log("enemy health is now ".concat(activeEnemy.getHealthPoints()));
-        if (activeEnemy.getHealthPoints()<=0){
+        if (activeEnemy.getHealthPoints() <= 0) {
             enemySelected = false;
             activeEnemy.die();
         }
-        if (activeHero.getHealthPoints() <= 0){
+        if (activeHero.getHealthPoints() <= 0) {
             activeHero.gameOver();
         }
     }
+    hero_statistics();
+    enemy_statistics();
 });
 
-$('.force_attack_btn').on('click', function(){
-    if((heroSelected == true) && (enemySelected == true)){
+
+$('.force_attack_btn').on('click', function () {
+    if ((heroSelected == true) && (enemySelected == true)) {
         console.log("player is forcefully attacking for ".concat(activeHero.getForcePower()));
-        
+
         activeHero.setAction("Force Attack");
         activeEnemy.enemyAction(activeHero);
         let enemyAction = activeEnemy.getAction();
-        if (!(activeEnemy.getAction()=="Force Defense")){
-            activeEnemy.setHealthPoints(activeEnemy.getHealthPoints()-activeHero.getForcePower());
+        if (!(activeEnemy.getAction() == "Force Defense")) {
+            activeEnemy.setHealthPoints(activeEnemy.getHealthPoints() - activeHero.getForcePower());
         }
         console.log("enemy health is now ".concat(activeEnemy.getHealthPoints()));
-        if (activeEnemy.getHealthPoints()<=0){
+        if (activeEnemy.getHealthPoints() <= 0) {
             enemySelected = false;
             activeEnemy.die();
         }
-        if (activeHero.getHealthPoints() <= 0){
+        if (activeHero.getHealthPoints() <= 0) {
             activeHero.gameOver();
         }
     }
+    hero_statistics();
+    enemy_statistics();
 });
 
 
 //I am going to leave off the decrease defend does to attack for now. If i get time I will include it.
-$('.phys_defend_btn').on('click', function(){
-    if((heroSelected == true) && (enemySelected == true)){
+$('.phys_defend_btn').on('click', function () {
+    if ((heroSelected == true) && (enemySelected == true)) {
         console.log("hero is defending physically!");
 
-    activeHero.setAction("Physical Defense"); 
-    activeEnemy.enemyAction(activeHero);
-    if (activeHero.getHealthPoints() <= 0){
-        activeHero.gameOver();
+        activeHero.setAction("Physical Defense");
+        activeEnemy.enemyAction(activeHero);
+        if (activeHero.getHealthPoints() <= 0) {
+            activeHero.gameOver();
+        }
     }
-    }
+    hero_statistics();
+    enemy_statistics();
 });
 
-$('.force_defend_btn').on('click', function(){
-    if((heroSelected == true) && (enemySelected == true)){
+$('.force_defend_btn').on('click', function () {
+    if ((heroSelected == true) && (enemySelected == true)) {
         console.log("Hero is defending forcefully!");
 
-    activeHero.setAction("Force Defense"); 
-    activeEnemy.enemyAction(activeHero);
-    if (activeHero.getHealthPoints() <= 0){
-        activeHero.gameOver();
+        activeHero.setAction("Force Defense");
+        activeEnemy.enemyAction(activeHero);
+        if (activeHero.getHealthPoints() <= 0) {
+            activeHero.gameOver();
+        }
     }
-    }
+    hero_statistics();
+    enemy_statistics();
 });
+
