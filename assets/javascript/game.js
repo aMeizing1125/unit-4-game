@@ -102,7 +102,7 @@ class combatant {
         $('.players').hide();
         alert("GAME OVER");
         alert("Restart the game when you are done morning your defeat! Muah ha ha ha!");
-        $('.reset_btn_area').css('border', "solid 20px red");
+        $('.reset_btn_area').css('border', "solid 20px chartreuse");
     }
 
     enemyAction(hero) {

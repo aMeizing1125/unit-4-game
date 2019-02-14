@@ -57,6 +57,7 @@
 
 /* BODY */
 
+
 .the_body {
     grid-template-columns: [game] auto [stats] 20%;
     background-image: url("../images/background1.jpg");
@@ -110,6 +111,9 @@ body {
     justify-content: space-evenly
    
 }
+.overflow {
+    overflow: hidden;
+}
 
 .phys_attack_btn, 
 .phys_defend_btn, 
@@ -121,7 +125,12 @@ body {
 .reset_btn_area {
     justify-content: center;
     border-radius: 4px;
+    padding: 20px;
+    background-color: lightcoral;
 
+}
+.reset_btn_area:hover {
+    background-color: lightseagreen;
 }
 
 #hero_lightsaber,
@@ -136,9 +145,7 @@ body {
     padding: 10px;
 }
 
-.reset_btn_area:hover {
-  
-}
+
 /* trying new things. I haven't used active before. I think I like CSS best. 
 like a strange abusive relationship.  */
 .reset_btn_area:active {
