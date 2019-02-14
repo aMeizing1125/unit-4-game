@@ -3,6 +3,8 @@
 // NOTE: I tried switching things out to === and it broke THINGS! A lot of things
 // So don't even act like I didn't hear what Darin and Kevin were saying because I did. 
 //  And it doesn't work with my code. 
+// I had this as an array at first but it kept running into several issues. Overall this
+//was a way TOO challenging for me. 
 
 
 class combatant {
@@ -209,6 +211,8 @@ $('.characterCard').on('click', function () {
 
 
 //my attempts to solve a bug *** 
+
+//if I stuck with my data-player="null"  I wouldnt have this issue, I should have stuck with my intial assessment instead of taking feedback and changing it. 
 // $('.characterCard').on('click', function() {
 //     //return exits the function you're in **note**
 //     if ((attacker == false) && (enemySelected == false)){
@@ -259,7 +263,7 @@ $('.phys_attack_btn').on('click', function () {
     enemy_statistics();
 });
 
-
+//this is where I wanted to activate animation with the light sabers. I found some cool other option but I can't think about this project anymore. 
 $('.force_attack_btn').on('click', function () {
     if ((heroSelected == true) && (enemySelected == true)) {
         console.log("player is forcefully attacking for ".concat(activeHero.getForcePower()));
